@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: insure-me
+  labels:
+    app: insure-me
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: insure-me
+  template:
+    metadata:
+      labels:
+        app: insure-me
+    spec:
+      containers:
+        - name: insure-me
+          image: kirankhode/insure-me:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "default"
