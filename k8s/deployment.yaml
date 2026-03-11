@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: insure-me
-          image: kirankhode/insure-me:latest
+          image: kirankhode/insure-me:23
           imagePullPolicy: Always
           ports:
             - containerPort: 8081
